@@ -1,4 +1,5 @@
 #!/bin/bash
+#note, this should be run as bash, or using ./  calling sh in this case is a nono
 source /usr/local/bin/virtualenvwrapper.sh;
 export WORKON_HOME=/path/to/virtualenv/dirs/
 workon my_env;
