@@ -1,0 +1,3 @@
+src/*
+!src/README.rst
+project_readme.txt
