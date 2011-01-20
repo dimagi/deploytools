@@ -1,0 +1,8 @@
+#!/bin/bash
+source /usr/local/bin/virtualenvwrapper.sh;
+export WORKON_HOME=/path/to/virtualenv/dirs/
+workon my_env;
+
+#this should tell you that python is using the bin in the WORKON_HOME/my_env dir
+which python;
+
