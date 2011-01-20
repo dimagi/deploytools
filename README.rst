@@ -13,10 +13,12 @@ These tools make a few assumptions:
 Workflow
 ========
 
-cd /project_repository
-git clone this
-cp -r this to project_name
-cd project_name
-cd src
-git clone project_src
-edit the upstart scripts to reflect your project and copy it to init
+- cd /project_repository
+- git clone this
+- cp -r this to project_name
+- cd project_name
+- cd src
+- git clone project_src
+- edit the upstart scripts to reflect your project and copy it to init
+
+More to come
