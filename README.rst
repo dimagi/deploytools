@@ -21,4 +21,13 @@ Workflow
 - git clone project_src
 - edit the upstart scripts to reflect your project and copy it to init
 
+Virtual Environments
+====================
+- run ./setenv.sh (not bash setenv.sh, ./setenv.sh).  This will set the appropriate environmental variable
+- mkvirtualenv <envname>
+- workon <envname>
+- cd src
+- cd project_src
+- pip install to your heart's content
+
 More to come
