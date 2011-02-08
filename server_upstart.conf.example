@@ -11,6 +11,8 @@ env DJANGO_HOME=/path/to/django/dir #where manage.py is
 env DJANGO_PORT=9001
 env DJANGO_HOST=127.0.0.1 # bind to 0.0.0.0 or other port where needed
 env DJANGO_VIRTUALENV=/path/to/virtualenv
+env PROJECT_USER=username
+env LOG_PATH=/path/to/logpath
 
 # tell upstart we're creating a daemon
 # upstart manages PID creation for you.
@@ -22,5 +24,5 @@ end script
 
 script
 	# Note, we're using the virtualenv's python interpreter.  Calling source/workon doesn't work here, so just call the ENV's executable instead.
-	exec $DJANGO_VIRTUALENV/bin/python $DJANGO_HOME/manage.py run_gunicorn $DJANGO_HOST:$DJANGO_PORT --preload -w 3 --log-level debug -p $DJANGO_HOME/../$PROJECT_NAME.pid  -k gevent &
+	exec sudo -u $PROJECT_USER $DJANGO_VIRTUALENV/bin/python $DJANGO_HOME/manage.py run_gunicorn $DJANGO_HOST:$DJANGO_PORT --preload -w 3 --log-level debug --log-file $LOG_PATH -p $DJANGO_HOME/../$PROJECT_NAME.pid  -k gevent &
 end script
