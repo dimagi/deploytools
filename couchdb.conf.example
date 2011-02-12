@@ -1,0 +1,17 @@
+# Example upstart django script
+# this script will start/stop the django server running via a management command
+# This script assumes gunicorn and gevent are installed and configured for your django project
+# Copy this script and name it the service you want in your ubuntu system to /etc/init/
+description "start and stop the couchdb server"
+
+emits couchdb-started
+
+# configuration variables.
+# You'll want to change these as needed
+env COUCHDB_HOME=/path/to/couchdb #where couchdb is installed
+env COUCHDB_USER=couchdb
+
+expect fork
+script
+	exec sudo -u $COUCHDB_USER $COUCHDB_HOME/bin/couchdb &
+end script

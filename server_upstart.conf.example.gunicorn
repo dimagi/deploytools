@@ -4,6 +4,7 @@
 # Copy this script and name it the service you want in your ubuntu system to /etc/init/
 description "start and stop the django_project"
 
+start on couchdb-started
 # configuration variables.
 # You'll want to change these as needed
 env PROJECT_NAME=project_name

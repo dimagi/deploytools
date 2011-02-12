@@ -1,4 +1,1 @@
-src/*
-env/*
-!src/README.rst
 project_readme.txt

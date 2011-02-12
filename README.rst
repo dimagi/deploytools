@@ -23,7 +23,7 @@ Workflow
 
 Virtual Environments
 ====================
-- run ./setenv.sh (not bash setenv.sh, ./setenv.sh).  This will set the appropriate environmental variable
+- source setenv.sh (or try ./setenv.sh).  This will set the appropriate environmental variables for your virtualenv
 - mkvirtualenv <envname>
 - workon <envname>
 - cd src
